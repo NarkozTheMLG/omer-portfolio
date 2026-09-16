@@ -2,10 +2,10 @@ export const about = {
   name: 'Ömer Keskin',
   headline: 'GameObject: Ömer Keskin',
   subhead: '21-year-old Unity Game Developer & CTIS Student from Ankara, Turkey 🇹🇷',
-  positioning: 'Unity Game Developer specializing in C#, modular gameplay systems architecture. President of Bilkent Game Dev Club (BOA).',
+  positioning: 'Unity Game Developer specializing in C#, modular gameplay systems architecture. Vice President of Bilkent Game Dev Club (BOA).',
   bio: [
     'Unity Game Developer and CTIS student at Bilkent University, focused on performant game titles, zero-allocation C# systems architecture, and arcade idle mechanics.',
-    'Former engineering intern at Gamelab Istanbul and current President of Bilkent Game Development & Animation Club (BOA), organizing university hackathons and studio dev talks.'
+    'Former engineering intern at Gamelab Istanbul and current Vice President of Bilkent Game Development & Animation Club (BOA), organizing university hackathons and studio dev talks.'
   ],
   work: [
     {
@@ -31,7 +31,7 @@ export const about = {
       location: 'Ankara, Turkey',
       logo: 'assets/about/bilkent.jpg',
       detail: 'Core coursework in Object-Oriented Programming (C/Java), Data Structures & Algorithms, Mobile Computing, and Database Systems.',
-      gpa: 'GPA: 3.04 / 4.00',
+      gpa: 'GPA: 3.16 / 4.00',
       tags: ['C', 'Java', 'Data Structures', 'OOP']
     }
   ],
@@ -45,7 +45,7 @@ export const about = {
       location: 'Ankara, Turkey',
       roles: [
         {
-          title: 'President',
+          title: 'Vice President',
           dates: 'Jun 2026 – Present',
           points: [
             'Directing Bilkent\'s 600+ member game development community across events, sponsorship and partnerships.',
@@ -81,15 +81,15 @@ export const about = {
   ],
   timeline: [
     { dates: 'Summer 2026', org: 'Gamelab Istanbul', role: 'Game Engineering & Multiplayer Intern', detail: 'Engineered the multiplayer & online infrastructure for a 3D FPS on GlistEngine (C++20): tick-rate state replication, Master Server matchmaking, NAT hole punching, and PBKDF2-hashed SQLite authentication.' },
-    { dates: 'Fall 2025 – Present', org: 'Bilkent Game Dev Club (BOA)', role: 'President & Board Member', detail: 'Directing university game dev operations, leading BOA Jam 5 & 6 hackathons, and hosting technical Dev Talks with Panteon, SciPlay, and Loop Games.' },
+    { dates: 'Fall 2025 – Present', org: 'Bilkent Game Dev Club (BOA)', role: 'Vice President & Board Member', detail: 'Directing university game dev operations, leading BOA Jam 5 & 6 hackathons, and hosting technical Dev Talks with Panteon, SciPlay, and Loop Games.' },
     { dates: '2024 – Present', org: 'İhsan Doğramacı Bilkent University', role: 'B.Sc. Computer Technology & Information Systems (CTIS)', detail: 'Rigorous academic focus on Object-Oriented Programming (C/Java), data structures, algorithms, mobile computing, and software engineering.' },
     { dates: 'Jan 2026 – Present', org: 'IEEE Bilkent', role: 'Organization Team Member', detail: 'Assisting event logistics, student outreach, and technical workshop coordination.' }
   ],
   skills: {
     engines: ['Unity Engine (2D & 3D)', 'Unity Mobile Pipeline', 'ScriptableObject Architecture'],
     languages: ['C# (Primary)', 'C++', 'C', 'Java (OOP)', 'SQL'],
-    tools: ['Git / GitHub', 'Unity Profiler', 'Unity VCS', 'Visual Studio / Rider', 'Modern OpenGL'],
-    areas: ['Mobile Game Development', 'Gameplay Systems & Mechanics', 'Zero-Allocation Object Pooling', 'Mobile Optimization (60 FPS)']
+    tools: ['Git / GitHub', 'Unity Profiler', 'Unity VCS', 'Visual Studio / Rider'],
+    areas: ['Mobile Game Development', 'Zero-Allocation Object Pooling', 'Mobile Optimization (60 FPS)']
   },
   // Fanned photo stack in the hero. Newest last — it renders on top.
   photoStack: [
@@ -142,6 +142,16 @@ export const project = {
     'No real shadows: characters and buildings use a custom fake-blob shader instead of shadow casters.',
     'Post-processing deleted, not tuned: the Uber pass cost more than its two operators because it forced the frame out of tile memory on mobile.'
   ],
+  frameDebugger: {
+    before: {
+      src: 'assets/project/frame_debugger.png',
+      caption: 'Before — 114 draw events. Outline shader broke SRP batching, fake shadows drew one call each, UI textures fragmented across passes.'
+    },
+    after: {
+      src: 'assets/project/frame_debugger_after.png',
+      caption: 'After — 45 draw events. Outline pass retagged, shadows moved to GPU instancing, UI sprites atlased. Batching restored across the board.'
+    }
+  },
   hardProblems: [
     {
       title: 'Pooled drops breaking',
@@ -174,8 +184,7 @@ export const project = {
   ],
   gallery: [
     { src: 'assets/project/phone_screenshot.jpg', alt: 'PerfHUD on-device overlay', caption: 'On-device frame-time overlay: median, hitches, GC.' },
-    { src: 'assets/project/stats.png', alt: 'In-editor graphics stats overlay', caption: 'Batches, triangles, SetPass calls at a glance.' },
-    { src: 'assets/project/frame_debugger.png', alt: 'Unity Frame Debugger', caption: 'Frame Debugger: draw calls, event by event.' }
+    { src: 'assets/project/stats.png', alt: 'In-editor graphics stats overlay', caption: 'Batches, triangles, SetPass calls at a glance.' }
   ],
   links: {
     crazygames: '#',
@@ -282,7 +291,7 @@ export const jams = [
 
 export const club = {
   role: {
-    title: 'President & Board Member, Bilkent Game Dev Club (BOA)',
+    title: 'Vice President & Board Member, Bilkent Game Dev Club (BOA)',
     term: 'Fall 2025 – Present',
     blurb: 'Directing overall operations for Bilkent University\'s premier game development community. Leading hackathons, establishing game studio partnerships, and coordinating technical seminars and studio visits.'
   },
@@ -318,7 +327,8 @@ export const club = {
       details: [
         'Mentored 50+ participants across 12 teams through ideation, Unity architecture, and project polish phases.',
         'Managed on-campus lab venue logistics, hardware setups, and network infrastructure over a 48-hour continuous hackathon.',
-        'Organized final project showcase, judging panel deliberations, and closing awards ceremony.'
+        'Organized final project showcase, judging panel deliberations, and closing awards ceremony.',
+        'Landed a sponsorship with Game Design Academia.'
       ]
     },
     {
@@ -383,20 +393,21 @@ export const club = {
     },
     {
       id: 'ev-5',
-      title: 'BOA Jam 6 Hackathon Planning and Direction',
+      title: 'BOA Jam 6 Planning and Direction',
       date: 'Fall 2026',
-      description: 'Leading sponsorship acquisitions, venue logistics, and community coordination for Bilkent\'s next flagship game development hackathon.',
+      description: 'Leading sponsorship acquisitions, venue logistics, and community coordination for Bilkent\'s next flagship game jam.',
       role: 'Director and Lead Organizer',
       platform: 'instagram',
-      tags: ['Game Jam', 'Hackathon', 'Planning'],
+      tags: ['Game Jam', 'Planning'],
       photos: [
-        { src: 'assets/club/banner-06.png', alt: 'BOA Jam 6 upcoming flagship hackathon banner' }
+        { src: 'assets/club/banner-06.png', alt: 'BOA Jam 6 upcoming flagship game jam banner' }
       ],
       link: 'https://instagram.com/bilkentoyun',
       details: [
-        'Leading strategy, partner outreach, and venue reservations for Bilkent\'s upcoming major hackathon.',
+        'Leading strategy, partner outreach, and venue reservations for Bilkent\'s upcoming major game jam.',
         'Coordinating game studio mentors and jury panels from leading industry studios.',
-        'Targeting 80+ university student game developers across multiple departments.'
+        'Targeting 80+ university student game developers across multiple departments.',
+        'Landed a sponsorship with TaleWorlds.'
       ]
     }
   ]

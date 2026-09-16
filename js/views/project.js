@@ -103,6 +103,19 @@ export function renderProject(data) {
       <h2>Performance</h2>
       <ul class="systems-list">${systems}</ul>
 
+      ${data.frameDebugger ? `
+      <h3>Frame Debugger: Before &#8594; After</h3>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <img class="gallery-photo" src="${escapeHtml(data.frameDebugger.before.src)}" alt="Frame Debugger before optimization" loading="lazy" tabindex="0" role="button" aria-label="Enlarge: Frame Debugger before optimization">
+          <figcaption>${escapeHtml(data.frameDebugger.before.caption)}</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img class="gallery-photo" src="${escapeHtml(data.frameDebugger.after.src)}" alt="Frame Debugger after optimization" loading="lazy" tabindex="0" role="button" aria-label="Enlarge: Frame Debugger after optimization">
+          <figcaption>${escapeHtml(data.frameDebugger.after.caption)}</figcaption>
+        </figure>
+      </div>` : ''}
+
       ${sideClips.length > 0 ? `
       <h2>Core Systems & Gameplay</h2>
       <div class="project-side-clips-grid">${sideClips}</div>` : ''}
