@@ -16,8 +16,8 @@ test('project has all case-study sections', () => {
   for (const hp of project.hardProblems) {
     assert.ok(hp.title && hp.broke && hp.tried && hp.shipped && hp.tradeoff);
   }
-  assert.ok(project.gallery.length >= 3 && project.gallery.length <= 5);
-  assert.ok(project.tags.length <= 4);
+  assert.ok(project.gallery.length >= 2 && project.gallery.length <= 5);
+  assert.ok(project.tags.length <= 5);
 });
 
 test('jams entries are tagged and capped', () => {

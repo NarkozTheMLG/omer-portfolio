@@ -51,6 +51,7 @@ export function renderProject(data) {
       </div>`).join('');
 
   const systems = data.systems.map(s => `<li>${escapeHtml(s)}</li>`).join('');
+  const releaseOps = (data.releaseOps || []).map(s => `<li>${escapeHtml(s)}</li>`).join('');
 
   const galleryItems = data.gallery || [];
   const gallery = galleryItems.length === 3 ? `
@@ -119,6 +120,10 @@ export function renderProject(data) {
       ${sideClips.length > 0 ? `
       <h2>Core Systems & Gameplay</h2>
       <div class="project-side-clips-grid">${sideClips}</div>` : ''}
+
+      ${releaseOps ? `
+      <h2>Release &amp; Live Ops</h2>
+      <ul class="systems-list">${releaseOps}</ul>` : ''}
 
       <h2>Hard Problems</h2>
       ${(data.hardProblems || []).map(hp => `
