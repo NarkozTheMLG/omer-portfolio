@@ -81,6 +81,42 @@ export function renderProject(data) {
         </figure>`).join('')}
     </div>`;
 
+  const stores = data.stores || [];
+  const liveStore = stores.find(st => st.status === 'live' && st.href);
+  const pendingStores = stores.filter(st => st !== liveStore);
+
+  const releaseCta = liveStore ? `
+      <div class="release-cta">
+        <span class="available-pill"><span class="live-dot" aria-hidden="true"></span>Available now!</span>
+        <a class="play-now-btn" href="${escapeHtml(liveStore.href)}" target="_blank" rel="noopener">
+          <img src="${escapeHtml(liveStore.icon)}" alt="" aria-hidden="true">
+          <span>Play now on ${escapeHtml(liveStore.name)}</span>
+          <span class="play-now-arrow" aria-hidden="true">&#8594;</span>
+        </a>
+        ${pendingStores.length > 0 ? `
+        <ul class="release-status">
+          ${pendingStores.map(st => `
+          <li><img src="${escapeHtml(st.icon)}" alt="" aria-hidden="true">${escapeHtml(st.name)} <span class="release-status-sep" aria-hidden="true">&middot;</span> <span class="release-status-label is-${escapeHtml(st.status)}">${escapeHtml(st.statusLabel)}</span></li>`).join('')}
+        </ul>` : ''}
+      </div>` : '';
+
+  const storeBadges = stores.map(st => {
+    const inner = `
+          <img class="store-badge-icon" src="${escapeHtml(st.icon)}" alt="" aria-hidden="true">
+          <span class="store-badge-text">
+            <span class="store-badge-kicker">${st.href ? 'Play on' : 'Coming to'}</span>
+            <span class="store-badge-name">${escapeHtml(st.name)}</span>
+          </span>`;
+    const badge = st.href
+      ? `<a class="store-badge is-${escapeHtml(st.status)}" href="${escapeHtml(st.href)}" target="_blank" rel="noopener">${inner}</a>`
+      : `<span class="store-badge is-${escapeHtml(st.status)}">${inner}</span>`;
+    return `
+      <li class="store-badge-item">
+        ${badge}
+        <span class="store-badge-status is-${escapeHtml(st.status)}">${escapeHtml(st.statusLabel)}</span>
+      </li>`;
+  }).join('');
+
   const sideClips = (data.sideClips || []).map(c => `
     <div class="side-clip">
       ${mediaBlock({ src: c.src, poster: c.poster, alt: c.caption })}
@@ -92,6 +128,7 @@ export function renderProject(data) {
       ${data.banner ? `<img class="project-banner" src="${escapeHtml(data.banner)}" alt="${escapeHtml(data.title)}">` : ''}
       <h1>${escapeHtml(data.title)}</h1>
       <p class="hook">${escapeHtml(data.hook)}</p>
+      ${releaseCta}
 
       <dl class="fact-strip">${facts}</dl>
 
@@ -141,11 +178,9 @@ export function renderProject(data) {
       <h2>Gallery</h2>
       ${gallery}
 
+      ${storeBadges ? `
       <h2>Links (Soon)</h2>
-      <ul class="link-list project-links-soon">
-        <li><span class="soon-badge-item"><strong>CrazyGames</strong> <span class="badge-tag">Soon</span></span></li>
-        <li><span class="soon-badge-item"><strong>Google Play Store</strong> <span class="badge-tag">Soon</span></span></li>
-        <li><span class="soon-badge-item"><strong>App Store</strong> <span class="badge-tag">Soon</span></span></li>
-      </ul>
+      <ul class="store-badges">${storeBadges}
+      </ul>` : ''}
     </section>`;
 }

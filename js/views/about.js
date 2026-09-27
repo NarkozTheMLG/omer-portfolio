@@ -191,10 +191,13 @@ export function renderAbout(data) {
   const featuredBody = featured.length > 0 ? `
     <div class="home-projects">
       ${featured.map(item => `
-      <a class="home-project-card" href="${escapeHtml(item.href)}">
-        <h3>${escapeHtml(item.title)}</h3>
-        <p>${escapeHtml(item.blurb)}</p>
-      </a>`).join('')}
+      <div class="home-project-card">
+        <a class="home-project-link" href="${escapeHtml(item.href)}">
+          <h3>${escapeHtml(item.title)}${item.badge ? ` <span class="available-pill is-small"><span class="live-dot" aria-hidden="true"></span>${escapeHtml(item.badge)}</span>` : ''}</h3>
+          <p>${escapeHtml(item.blurb)}</p>
+        </a>
+        ${item.play ? `<a class="home-play-link" href="${escapeHtml(item.play.href)}" target="_blank" rel="noopener">${escapeHtml(item.play.label)} <span aria-hidden="true">&#8599;</span></a>` : ''}
+      </div>`).join('')}
     </div>` : '<p class="inspector-empty">No entries.</p>';
 
   return `

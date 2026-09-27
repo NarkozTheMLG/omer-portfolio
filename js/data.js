@@ -106,6 +106,8 @@ export const about = {
   featured: [
     {
       title: 'Sprout King: Idle Arcade',
+      badge: 'Available now!',
+      play: { label: 'Play on CrazyGames', href: 'https://www.crazygames.com/game/sprout-king' },
       blurb: 'A mobile base-builder: chop, craft, and hire villagers to automate a hex island, locked to 60 FPS on a budget Android phone.',
       href: '#/project'
     },
@@ -192,11 +194,12 @@ export const project = {
     { src: 'assets/project/phone_screenshot.jpg', alt: 'PerfHUD on-device overlay', caption: 'On-device frame-time overlay: median, hitches, GC.' },
     { src: 'assets/project/stats.png', alt: 'In-editor graphics stats overlay', caption: 'Batches, triangles, SetPass calls at a glance.' }
   ],
-  links: {
-    crazygames: '#',
-    googlePlay: '#',
-    appStore: '#'
-  },
+  // Store availability. Only entries with an href are rendered as links.
+  stores: [
+    { name: 'CrazyGames', icon: 'assets/project/stores/crazygames.png', href: 'https://www.crazygames.com/game/sprout-king', status: 'live', statusLabel: 'Live now' },
+    { name: 'App Store', icon: 'assets/project/stores/app-store.png', status: 'review', statusLabel: 'In review' },
+    { name: 'Google Play', icon: 'assets/project/stores/google-play.png', status: 'testing', statusLabel: 'Closed testing' }
+  ],
   tags: ['Unity 6000 / URP', 'C# Systems Architecture', 'Solo Dev', 'Mobile Performance', 'Monetization & Analytics']
 };
 
