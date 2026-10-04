@@ -49,8 +49,9 @@ export const about = {
           dates: 'Jun 2026 – Present',
           points: [
             'Directing Bilkent\'s 600+ member game dev community: events, sponsorship, partnerships.',
-            'Directed BOA Jam 5 & 6, landing sponsorships from Game Design Academia and TaleWorlds (main sponsor) and organizing 10 industry mentors.',
-            'Hosting technical Dev Talks with Panteon, SciPlay and Loop Games.'
+            'Directed BOA Jam 5 & 6, landing sponsorships from Game Design Academia, TaleWorlds (main sponsor) and Bifa, and organizing 10 industry mentors.',
+            'Hosting technical Dev Talks with Panteon, SciPlay and Loop Games.',
+            'Organizing a club visit to the TaleWorlds office.'
           ]
         },
         {
@@ -70,9 +71,9 @@ export const about = {
       roles: [
         {
           title: 'Organization Team Member',
-          dates: 'Jan 2026 – Present',
+          dates: 'Jan 2026 – May 2026',
           points: [
-            'Coordinating technical workshops and student engineering outreach.'
+            'Coordinated technical workshops and student engineering outreach.'
           ]
         }
       ],
@@ -83,7 +84,7 @@ export const about = {
     { dates: 'Summer 2026', org: 'Gamelab Istanbul', role: 'Game Engineering & Multiplayer Intern', detail: 'Engineered multiplayer infrastructure for a 3D FPS on GlistEngine (C++20): tick-rate replication, Master Server matchmaking, NAT hole punching, PBKDF2-hashed SQLite auth.' },
     { dates: 'Fall 2025 – Present', org: 'Bilkent Game Dev Club (BOA)', role: 'Vice President & Board Member', detail: 'Directing university game dev operations, leading BOA Jam 5 & 6, hosting Dev Talks with Panteon, SciPlay, and Loop Games.' },
     { dates: '2024 – Present', org: 'İhsan Doğramacı Bilkent University', role: 'B.Sc. Computer Technology & Information Systems (CTIS)', detail: 'Coursework: Object-Oriented Programming (C/Java), data structures, algorithms, mobile computing, software engineering.' },
-    { dates: 'Jan 2026 – Present', org: 'IEEE Bilkent', role: 'Organization Team Member', detail: 'Event logistics, student outreach, and technical workshop coordination.' }
+    { dates: 'Jan 2026 – May 2026', org: 'IEEE Bilkent', role: 'Organization Team Member', detail: 'Event logistics, student outreach, and technical workshop coordination.' }
   ],
   skills: {
     engines: ['Unity Engine (2D & 3D)', 'Unity Mobile Pipeline', 'ScriptableObject Architecture'],
@@ -130,7 +131,7 @@ export const project = {
   banner: 'assets/project/banner.png',
   video: { src: 'assets/project/games_beginning.mp4', poster: 'assets/project/banner.png' },
   facts: {
-    role: 'Solo Developer — every part, end to end',
+    role: 'Solo Developer — design, code and release, end to end (AI-assisted art and music)',
     team: 'Solo',
     duration: '~12 weeks · Summer 2026',
     unityVersion: 'Unity 6000.3.7f1 (URP 17.3.0, IL2CPP, Cinemachine)',
@@ -184,6 +185,20 @@ export const project = {
     'GameAnalytics across economy flow, progression funnels, session length, and ad outcomes — fail-safe, so analytics faults can\'t affect gameplay.',
     'GDPR consent, Apple App Tracking Transparency, and COPPA configuration handled ahead of store submission.'
   ],
+  // Which parts of the game used AI tools, and which were built by hand.
+  aiUsage: {
+    ai: [
+      { area: '3D models', detail: 'Most base meshes were AI-generated, then cleaned up and edited by hand.' },
+      { area: '3D texturing', detail: 'Textures were made with AI-assisted tools.' },
+      { area: 'Music', detail: 'Music generated with Suno.' }
+    ],
+    handmade: [
+      'All C# gameplay code and systems architecture: quests, worker AI, crafting, save system, event-driven core.',
+      'Custom fake-blob shadow shader.',
+      'Performance work: batching, region culling, build size.',
+      'Ads, analytics and store release setup.'
+    ]
+  },
   // Small looping clips next to the banner, each demonstrating one system from the Performance list above.
   sideClips: [
     { src: 'assets/project/axe_craft.mp4', poster: 'assets/project/banner.png', caption: 'Craft tools that villagers then use to automate the harvest.' },
@@ -404,18 +419,21 @@ export const club = {
       id: 'ev-5',
       title: 'BOA Jam 6',
       date: 'Fall 2026',
-      description: 'Leading sponsorship, venue logistics, and community coordination for BOA Jam 6.',
+      description: 'Directed Bilkent\'s 48-hour game jam for 50+ participants: sponsorships, industry mentors, venue logistics and community coordination.',
       role: 'Director and Lead Organizer',
       platform: 'instagram',
-      tags: ['Game Jam', 'Upcoming'],
+      tags: ['Game Jam', 'Sponsorship', 'Mentorship'],
       photos: [
-        { src: 'assets/club/banner-06.png', alt: 'BOA Jam 6 upcoming flagship game jam banner' }
+        { src: 'assets/club/boa-jam-6/closing.jpg', alt: 'BOA Jam 6 participants and mentors in the closing group photo' },
+        { src: 'assets/club/boa-jam-6/in-jam.jpg', alt: 'A BOA Jam 6 team presenting their game to the room' },
+        { src: 'assets/club/boa-jam-6/mentors.jpg', alt: 'BOA Jam 6 mentors and organizers' }
       ],
       link: 'https://instagram.com/bilkentoyun',
       details: [
-        'Landed TaleWorlds as the main sponsor.',
-        'Organized 10 industry mentors and a jury panel.',
-        'Targeting 80+ student developers across departments.'
+        'Owned sponsorships and mentor recruitment for the jam.',
+        'Ran the TaleWorlds (main sponsor) and Bifa sponsorships end to end.',
+        'Organized 10 industry mentors and a jury panel, including 4 mentors from TaleWorlds, Utku Çelik, Pelin Su Pişkin and [Barış Erdem](https://www.linkedin.com/in/bariserdem/).',
+        'Hosted 50+ student developers over 48 hours.'
       ]
     },
     {

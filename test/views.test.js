@@ -24,6 +24,13 @@ test('renderProject includes fact strip labels and hard-problem tradeoff', () =>
   assert.ok(html.includes('What I&#39;d change') || html.includes(project.retro));
 });
 
+test('renderProject lists the AI usage breakdown', () => {
+  const html = renderProject(project);
+  assert.ok(html.includes('AI Usage'));
+  for (const item of project.aiUsage.ai) assert.ok(html.includes(item.area), `missing AI area: ${item.area}`);
+  assert.equal(renderProject({ ...project, aiUsage: undefined }).includes('AI Usage'), false);
+});
+
 test('renderJams renders all jam cards', () => {
   const html = renderJams(jams);
   const count = (html.match(/class="jam-card(?=["\s])/g) || []).length;

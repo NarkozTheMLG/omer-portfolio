@@ -1,5 +1,5 @@
 import { jams, club } from './data.js';
-import { escapeHtml, mediaBlock, tagList } from './views/helpers.js';
+import { escapeHtml, linkify, mediaBlock, tagList } from './views/helpers.js';
 
 let overlayElement = null;
 let lastFocusedElement = null;
@@ -136,6 +136,14 @@ function renderClubFocusContent(ev) {
         <div class="card-focus-section">
           <p>${escapeHtml(ev.description)}</p>
         </div>
+
+        ${ev.details && ev.details.length > 0 ? `
+          <div class="card-focus-section">
+            <h3>Highlights</h3>
+            <ul class="card-focus-bullets">
+              ${ev.details.map(d => `<li>${linkify(d)}</li>`).join('')}
+            </ul>
+          </div>` : ''}
       </div>
     </div>`;
 }

@@ -7,6 +7,14 @@ export function escapeHtml(str) {
     .replace(/'/g, '&#39;');
 }
 
+// Escapes text, then turns [label](https://…) into an external link.
+export function linkify(str) {
+  return escapeHtml(str).replace(
+    /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
+    '<a href="$2" target="_blank" rel="noopener">$1</a>'
+  );
+}
+
 export function mediaBlock({ src, poster, alt = '' }) {
   if (!src) {
     return `

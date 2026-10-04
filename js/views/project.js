@@ -52,6 +52,9 @@ export function renderProject(data) {
 
   const systems = data.systems.map(s => `<li>${escapeHtml(s)}</li>`).join('');
   const releaseOps = (data.releaseOps || []).map(s => `<li>${escapeHtml(s)}</li>`).join('');
+  const aiUsage = data.aiUsage || { ai: [], handmade: [] };
+  const aiItems = aiUsage.ai.map(item => `<li><strong>${escapeHtml(item.area)}:</strong> ${escapeHtml(item.detail)}</li>`).join('');
+  const handmadeItems = aiUsage.handmade.map(s => `<li>${escapeHtml(s)}</li>`).join('');
 
   const galleryItems = data.gallery || [];
   const gallery = galleryItems.length === 3 ? `
@@ -174,6 +177,14 @@ export function renderProject(data) {
 
       <h2>What I&#39;d change</h2>
       <p>${escapeHtml(data.retro)}</p>
+
+      ${aiItems ? `
+      <h2>AI Usage</h2>
+      <h3>Made with AI</h3>
+      <ul class="systems-list">${aiItems}</ul>
+      ${handmadeItems ? `
+      <h3>Made by hand</h3>
+      <ul class="systems-list">${handmadeItems}</ul>` : ''}` : ''}
 
       <h2>Gallery</h2>
       ${gallery}
