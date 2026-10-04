@@ -49,7 +49,7 @@ export const about = {
           dates: 'Jun 2026 – Present',
           points: [
             'Directing Bilkent\'s 600+ member game dev community: events, sponsorship, partnerships.',
-            'Directed BOA Jam 5 & 6, landing sponsorships from Game Design Academia, TaleWorlds (main sponsor) and Bifa, and organizing 10 industry mentors.',
+            'Directed BOA Jam 5 & 6, landing sponsorships from Game Design Academia, TaleWorlds (main sponsor) and Bifa, and organizing 7 industry mentors for Jam 6.',
             'Hosting technical Dev Talks with Panteon, SciPlay and Loop Games.',
             'Organizing a club visit to the TaleWorlds office.'
           ]
@@ -432,7 +432,7 @@ export const club = {
       details: [
         'Owned sponsorships and mentor recruitment for the jam.',
         'Ran the TaleWorlds (main sponsor) and Bifa sponsorships end to end.',
-        'Organized 10 industry mentors and a jury panel, including 4 mentors from TaleWorlds, Utku Çelik, Pelin Su Pişkin and [Barış Erdem](https://www.linkedin.com/in/bariserdem/).',
+        'Organized 7 industry mentors and a jury panel: 4 from TaleWorlds, Utku Çelik, Pelin Su Pişkin and [Barış Erdem](https://www.linkedin.com/in/bariserdem/).',
         'Hosted 50+ student developers over 48 hours.'
       ]
     },
