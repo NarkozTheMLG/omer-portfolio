@@ -1568,7 +1568,7 @@ html.dark .club-filter-btn.is-active {
 }
 
 /* ============================================================
-   Home page — tedawf.com-style layout
+   Home page: tedawf.com-style layout
    Serif display headings, fanned photo stack, stacked timeline sections.
    ============================================================ */
 
@@ -1757,7 +1757,7 @@ html.dark .about-hero .positioning {
 }
 
 /* ============================================================
-   About — Unity Inspector panel
+   About: Unity Inspector panel
    ============================================================ */
 .inspector-panel {
   background: var(--insp-bg);

@@ -22,8 +22,8 @@ test('parseHash falls back to about for empty or unknown hashes', () => {
 });
 
 test('routeMeta returns a per-view title', () => {
-  assert.equal(routeMeta('project').title, `Project — ${about.name}`);
-  assert.equal(routeMeta('club').title, `Club — ${about.name}`);
+  assert.equal(routeMeta('project').title, `Project | ${about.name}`);
+  assert.equal(routeMeta('club').title, `Club | ${about.name}`);
 });
 
 test('parseRoute splits a detail slug off the base route', () => {
@@ -56,7 +56,7 @@ test('every jam has a unique, URL-safe slug', () => {
 });
 
 test('routeMeta titles a jam detail page with the jam name', () => {
-  assert.equal(routeMeta('jams', 'cubinary').title, `Cubinary — ${about.name}`);
-  assert.equal(routeMeta('jams', 'no-such-jam').title, `Game Jams — ${about.name}`);
+  assert.equal(routeMeta('jams', 'cubinary').title, `Cubinary | ${about.name}`);
+  assert.equal(routeMeta('jams', 'no-such-jam').title, `Game Jams | ${about.name}`);
 });
 

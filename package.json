@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "Static Unity developer portfolio. No build step — this file exists only to enable `node --test` during development.",
+  "description": "Static Unity developer portfolio. No build step, this file exists only to enable `node --test` during development.",
   "scripts": {
     "test": "node --test"
   }

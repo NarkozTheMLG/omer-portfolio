@@ -3,7 +3,7 @@ import { escapeHtml, mediaBlock, tagList } from './helpers.js';
 export function renderJams(jams) {
   const cards = jams.map(jam => `
     <article class="jam-card card" data-jam-slug="${escapeHtml(jam.slug)}">
-      <a class="jam-card-link" href="#/jams/${escapeHtml(jam.slug)}" data-jam-slug="${escapeHtml(jam.slug)}" aria-label="${escapeHtml(jam.name)} — read the full breakdown">
+      <a class="jam-card-link" href="#/jams/${escapeHtml(jam.slug)}" data-jam-slug="${escapeHtml(jam.slug)}" aria-label="${escapeHtml(jam.name)}: read the full breakdown">
         <div class="jam-media-frame">
           ${mediaBlock({ src: jam.video.src, poster: jam.video.poster, alt: `${jam.name} gameplay loop` })}
         </div>

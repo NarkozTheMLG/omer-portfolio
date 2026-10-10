@@ -5,7 +5,7 @@ export const about = {
   positioning: 'Unity Game Developer specializing in C#, modular gameplay systems architecture. Vice President of Bilkent Game Dev Club (BOA).',
   bio: [
     'Unity Game Developer and CTIS student at Bilkent University. Builds performant games with zero-allocation C# systems and arcade idle mechanics.',
-    'Former engineering intern at Gamelab Istanbul, current Vice President of Bilkent Game Development & Animation Club (BOA), organizing game jams and studio dev talks.'
+    'Former engineering intern at Gamelab Istanbul and Vice President of Bilkent Game Dev Club (BOA), organizing game jams and studio dev talks.'
   ],
   work: [
     {
@@ -17,8 +17,8 @@ export const about = {
       points: [
         'Built Game Martyr\'s multiplayer stack (GlistEngine, C++20): 20 Hz fixed-tick state replication, hit registration, real-time animation sync.',
         'Designed a cloud Master Server for matchmaking: 6-character room codes, P2P UDP NAT hole punching, SQLite user database.',
-        'Shipped a headless dedicated server binary with full CLI config, and encapsulated networking into a standalone plugin (gipMultiplayer) with zero socket leaks into game code.',
-        'Hardened auth with PBKDF2-HMAC-SHA256 (600,000 iterations, per-user salts) and hashed session tokens, so a database leak alone can\'t become account takeover.'
+        'Shipped a headless dedicated server with CLI config, encapsulating networking into a plugin (gipMultiplayer) with zero socket leaks.',
+        'Hardened auth with PBKDF2-HMAC-SHA256 and hashed session tokens to prevent account takeovers from database leaks.'
       ],
       tags: ['C++20', 'Multiplayer Networking', 'GlistEngine', 'Cryptographic Security']
     }
@@ -36,7 +36,7 @@ export const about = {
     }
   ],
   // Club and student-organisation roles, shown as their own timeline
-  // under Education. An entry may list several roles at one organisation —
+  // under Education. An entry may list several roles at one organisation,
   // they stack under a single logo, LinkedIn-style.
   clubActivities: [
     {
@@ -49,7 +49,7 @@ export const about = {
           dates: 'Jun 2026 – Present',
           points: [
             'Directing Bilkent\'s 600+ member game dev community: events, sponsorship, partnerships.',
-            'Directed BOA Jam 5 & 6, landing sponsorships from Game Design Academia, TaleWorlds (main sponsor) and Bifa, and organizing 7 industry mentors for Jam 6.',
+            'Directed BOA Jam 5 & 6, securing sponsorships from TaleWorlds, Bifa, and Game Design Academia while coordinating 7 industry mentors.',
             'Hosting technical Dev Talks with Panteon, SciPlay and Loop Games.',
             'Organizing a club visit to the TaleWorlds office.'
           ]
@@ -92,7 +92,7 @@ export const about = {
     tools: ['Git / GitHub', 'Unity Profiler', 'Unity VCS', 'Visual Studio / Rider'],
     areas: ['Mobile Game Development', 'Zero-Allocation Object Pooling', 'Mobile Optimization (60 FPS)']
   },
-  // Fanned photo stack in the hero. Newest last — it renders on top.
+  // Fanned photo stack in the hero. Newest last, rendering on top.
   photoStack: [
     { src: 'assets/about/photo-1.png', alt: 'Ömer Keskin', year: '2025' },
     { src: 'assets/about/photo-2.png', alt: 'Ömer Keskin', year: '2026' }
@@ -103,7 +103,7 @@ export const about = {
     label: 'See the project',
     href: '#/project'
   },
-  // "featured projects" block on the home page — each links to a full tab.
+  // Featured projects block on the home page, linking to full tabs.
   featured: [
     {
       title: 'Sprout King: Idle Arcade',
@@ -127,11 +127,11 @@ export const about = {
 
 export const project = {
   title: 'Sprout King: Idle Arcade',
-  hook: 'A mobile base-builder: chop, craft, and hire villagers to automate a hex island across 22 regions and 89 quests, holding a locked 60 FPS on two budget test phones.',
+  hook: 'A mobile base-builder: chop, craft, and hire villagers to automate a hex island across 22 regions, locked at 60 FPS on budget devices.',
   banner: 'assets/project/banner.png',
   video: { src: 'assets/project/games_beginning.mp4', poster: 'assets/project/banner.png' },
   facts: {
-    role: 'Solo Developer — design, code and release, end to end (AI-assisted art and music)',
+    role: 'Solo Developer: design, code, and release end to end (AI-assisted art and music)',
     team: 'Solo',
     duration: '~12 weeks · Summer 2026',
     unityVersion: 'Unity 6000.3.7f1 (URP 17.3.0, IL2CPP, Cinemachine)',
@@ -139,21 +139,21 @@ export const project = {
     status: 'Live on CrazyGames (Full Launch)'
   },
   systems: [
-    'Regions stay off until unlocked: only 150 of 3,252 renderers active at once, ~53k live triangles (not the full 454k). 68 particle systems total, only nearby ones play.',
-    '23 distinct materials across every active renderer, kept low on purpose so the SRP Batcher can merge draw calls.',
-    'SRP Batcher on, dynamic batching off, MSAA/HDR/main-light shadows off. Lands around 101 SetPass calls and 143 batches on a Galaxy A23.',
-    'No real shadows: characters and buildings use a custom fake-blob shader instead of shadow casters.',
-    'Post-processing deleted, not tuned: the Uber pass cost more than its two operators because it forced the frame out of tile memory on mobile.',
-    'WebGL build trimmed to 18 MB (Brotli compression, IL2CPP stripping); event-driven core keeps quests, analytics, and audio decoupled as listeners on shared gameplay events.'
+    'Regions stay off until unlocked: only 150 of 3,252 renderers active at once (~53k live triangles instead of 454k), with only nearby particle systems playing.',
+    '23 distinct materials across active renderers, kept low so the SRP Batcher merges draw calls efficiently.',
+    'SRP Batcher enabled with MSAA/HDR disabled, achieving ~101 SetPass calls and 143 batches on a Galaxy A23.',
+    'No real shadows: characters and buildings use a custom fake-blob shader instead of expensive shadow casters.',
+    'Post-processing removed rather than tuned: the Uber pass cost too much by forcing frames out of mobile tile memory.',
+    'WebGL build trimmed to 18 MB via Brotli and IL2CPP stripping. An event-driven architecture keeps quests, analytics, and audio decoupled.'
   ],
   frameDebugger: {
     before: {
       src: 'assets/project/frame_debugger.png',
-      caption: 'Before — 114 draw events. Outline shader broke SRP batching, fake shadows drew one call each, UI textures fragmented across passes.'
+      caption: 'Before: 114 draw events. Outline shader broke SRP batching, fake shadows took extra calls, and UI textures fragmented passes.'
     },
     after: {
       src: 'assets/project/frame_debugger_after.png',
-      caption: 'After — 45 draw events. Outline pass retagged, shadows moved to GPU instancing, UI sprites atlased. Batching restored across the board.'
+      caption: 'After: 45 draw events. Retagged outlines, GPU-instanced shadows, and atlased UI sprites to restore batching.'
     }
   },
   hardProblems: [
@@ -168,29 +168,29 @@ export const project = {
       title: 'Trees shaking in lock-step',
       broke: 'A whole forest shook in perfect unison when hit.',
       tried: 'The damage-shake shader read one shared phase value for every instance.',
-      shipped: 'Gave each object its own phase, derived from its world position. Also added the missing shadow-caster passes — the shader cast no shadow at all.',
-      tradeoff: 'One extra vector read per vertex. Cheap, compared to how fake the synced shake looked.'
+      shipped: 'Gave each object an independent phase from world position, and added missing shadow-caster passes so trees cast shadows.',
+      tradeoff: 'One extra vector read per vertex. Cheap compared to synced shaking.'
     },
     {
       title: 'Villagers stuck at region borders',
       broke: 'Each hex region bakes its own NavMesh surface. Villagers could not walk from one region into the next.',
       tried: 'A single baked NavMesh does not work here, regions switch on and off as you unlock them.',
-      shipped: 'Added a NavMeshLink at every region border, bridging the two surfaces like a road. Villagers cross it like normal ground.',
-      tradeoff: '22 regions means dozens of links placed by hand. Cheap at runtime, hard to do manually.'
+      shipped: 'Added a NavMeshLink at each region border to bridge the surfaces, letting villagers cross seamlessly.',
+      tradeoff: 'Dozens of links placed by hand across 22 regions. Cheap at runtime, but manual to configure.'
     }
   ],
-  retro: 'My hex tile models don\'t line up perfectly, so NavMesh baking leaves gaps and odd detours. Next time: learn NavMesh area costs and carving, and build roads that actually guide the pathing.',
+  retro: 'Hex tile models did not align cleanly, causing NavMesh baking gaps. Next time: use NavMesh area costs and carving with designated road paths.',
   releaseOps: [
-    'Rewarded-video ads via Yodo1 MAS, wired behind a provider interface so mobile (live ads) and web (instant rewards) swap without touching game code.',
-    'GameAnalytics across economy flow, progression funnels, session length, and ad outcomes — fail-safe, so analytics faults can\'t affect gameplay.',
-    'GDPR consent, Apple App Tracking Transparency, and COPPA configuration handled ahead of store submission.'
+    'Rewarded-video ads via Yodo1 MAS, wired behind a provider interface so mobile and web swap without touching game code.',
+    'GameAnalytics across economy flow, funnels, session length, and ad outcomes, built fail-safe so analytics issues never affect gameplay.',
+    'GDPR consent, Apple ATT, and COPPA compliance configured prior to store submission.'
   ],
   launchMetrics: {
     title: 'Basic Launch Metrics',
     image: 'assets/project/launch_metrics.png',
     alt: 'CrazyGames developer dashboard showing Sprout King launch metrics and playtime tiers',
     caption: 'CrazyGames launch metrics tiers: Top 20% average playtime (12m 30s) across desktop and mobile.',
-    takeaway: 'It is obvious that I am lacking marketing — since this was a rushed project, I could not spare any time on marketing. However, the average playtime is in the top 20% on CrazyGames (12m 30s average session length, reaching 14m+ on mobile and tablet), which is really good for such a game on the platform and confirms that the core arcade idle loop and 60 FPS performance keep players engaged.'
+    takeaway: 'Marketing was clearly lacking because this was a rushed project and I could not spare time for promotion. However, average playtime reached the top 20% on CrazyGames (12m 30s average, 14m+ on mobile). That is a strong result for this genre and proves that the core arcade idle loop and 60 FPS performance keep players engaged.'
   },
   // Which parts of the game used AI tools, and which were built by hand.
   aiUsage: {
