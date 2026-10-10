@@ -108,7 +108,7 @@ export const about = {
     {
       title: 'Sprout King: Idle Arcade',
       badge: 'Available now!',
-      play: { label: 'Play on CrazyGames', href: 'https://www.crazygames.com/game/sprout-king' },
+      play: { label: 'Play on CrazyGames', href: 'https://www.crazygames.com/game/sprout-king-kmm' },
       blurb: 'A mobile base-builder: chop, craft, and hire villagers to automate a hex island, locked to 60 FPS on a budget Android phone.',
       href: '#/project'
     },
@@ -136,7 +136,7 @@ export const project = {
     duration: '~12 weeks · Summer 2026',
     unityVersion: 'Unity 6000.3.7f1 (URP 17.3.0, IL2CPP, Cinemachine)',
     platform: 'Android / iOS / WebGL',
-    status: 'Submitted to CrazyGames (In Review)'
+    status: 'Live on CrazyGames (Full Launch)'
   },
   systems: [
     'Regions stay off until unlocked: only 150 of 3,252 renderers active at once, ~53k live triangles (not the full 454k). 68 particle systems total, only nearby ones play.',
@@ -211,7 +211,7 @@ export const project = {
   ],
   // Store availability. Only entries with an href are rendered as links.
   stores: [
-    { name: 'CrazyGames', icon: 'assets/project/stores/crazygames.png', href: 'https://www.crazygames.com/game/sprout-king', status: 'live', statusLabel: 'Live now' },
+    { name: 'CrazyGames', icon: 'assets/project/stores/crazygames.png', href: 'https://www.crazygames.com/game/sprout-king-kmm', status: 'live', statusLabel: 'Live now' },
     { name: 'App Store', icon: 'assets/project/stores/app-store.png', status: 'review', statusLabel: 'In review' },
     { name: 'Google Play', icon: 'assets/project/stores/google-play.png', status: 'testing', statusLabel: 'Closed testing' }
   ],
