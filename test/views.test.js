@@ -31,6 +31,14 @@ test('renderProject lists the AI usage breakdown', () => {
   assert.equal(renderProject({ ...project, aiUsage: undefined }).includes('AI Usage'), false);
 });
 
+test('renderProject renders launch metrics when provided', () => {
+  const html = renderProject(project);
+  assert.ok(html.includes('Basic Launch Metrics'));
+  assert.ok(html.includes('top 20%'));
+  assert.ok(html.includes('launch_metrics.png'));
+  assert.equal(renderProject({ ...project, launchMetrics: undefined }).includes('Basic Launch Metrics'), false);
+});
+
 test('renderJams renders all jam cards', () => {
   const html = renderJams(jams);
   const count = (html.match(/class="jam-card(?=["\s])/g) || []).length;

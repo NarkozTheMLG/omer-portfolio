@@ -165,6 +165,14 @@ export function renderProject(data) {
       <h2>Release &amp; Live Ops</h2>
       <ul class="systems-list">${releaseOps}</ul>` : ''}
 
+      ${data.launchMetrics ? `
+      <h2>${escapeHtml(data.launchMetrics.title || 'Basic Launch Metrics')}</h2>
+      ${data.launchMetrics.takeaway ? `<p class="project-metrics-takeaway">${escapeHtml(data.launchMetrics.takeaway)}</p>` : ''}
+      <figure class="gallery-item project-metrics-figure">
+        <img class="gallery-photo" src="${escapeHtml(data.launchMetrics.image)}" alt="${escapeHtml(data.launchMetrics.alt)}" loading="lazy" tabindex="0" role="button" aria-label="Enlarge: ${escapeHtml(data.launchMetrics.alt)}">
+        <figcaption>${escapeHtml(data.launchMetrics.caption)}</figcaption>
+      </figure>` : ''}
+
       <h2>Hard Problems</h2>
       ${(data.hardProblems || []).map(hp => `
       <div class="hard-problem">

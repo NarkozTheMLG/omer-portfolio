@@ -185,6 +185,13 @@ export const project = {
     'GameAnalytics across economy flow, progression funnels, session length, and ad outcomes — fail-safe, so analytics faults can\'t affect gameplay.',
     'GDPR consent, Apple App Tracking Transparency, and COPPA configuration handled ahead of store submission.'
   ],
+  launchMetrics: {
+    title: 'Basic Launch Metrics',
+    image: 'assets/project/launch_metrics.png',
+    alt: 'CrazyGames developer dashboard showing Sprout King launch metrics and playtime tiers',
+    caption: 'CrazyGames launch metrics tiers: Top 20% average playtime (12m 30s) across desktop and mobile.',
+    takeaway: 'It is obvious that I am lacking marketing — since this was a rushed project, I could not spare any time on marketing. However, the average playtime is in the top 20% on CrazyGames (12m 30s average session length, reaching 14m+ on mobile and tablet), which is really good for such a game on the platform and confirms that the core arcade idle loop and 60 FPS performance keep players engaged.'
+  },
   // Which parts of the game used AI tools, and which were built by hand.
   aiUsage: {
     ai: [
