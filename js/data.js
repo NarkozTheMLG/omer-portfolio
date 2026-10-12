@@ -5,7 +5,7 @@ export const about = {
   positioning: 'Unity Game Developer specializing in C#, modular gameplay systems architecture. Vice President of Bilkent Game Dev Club (BOA).',
   bio: [
     'Unity Game Developer and CTIS student at Bilkent University. Builds performant games with zero-allocation C# systems and arcade idle mechanics.',
-    'Former engineering intern at Gamelab Istanbul and Vice President of Bilkent Game Dev Club (BOA), organizing game jams and studio dev talks.'
+    'Former engineering intern at Gamelab Istanbul, Vice President of Bilkent Game Dev Club (BOA), and Business Development & Event Specialist at GGOG, organizing game jams, studio dev talks, and industry events.'
   ],
   work: [
     {
@@ -65,6 +65,21 @@ export const about = {
       tags: ['Leadership', 'Game Jams', 'Studio Talks']
     },
     {
+      school: 'GGOG (Genç Girişimciler ve Oyun Geliştiricileri Derneği)',
+      logo: 'assets/about/ggog.svg',
+      location: 'Turkey',
+      roles: [
+        {
+          title: 'Business Development & Event Specialist',
+          dates: '2026 – Present',
+          points: [
+            'Leading studio relations, sponsor outreach, and end-to-end execution for gaming events and speaker programs.'
+          ]
+        }
+      ],
+      tags: ['Business Development', 'Events', 'Sponsorship']
+    },
+    {
       school: 'IEEE Bilkent Student Branch',
       logo: 'assets/about/ieee.png',
       location: 'Ankara, Turkey',
@@ -83,6 +98,7 @@ export const about = {
   timeline: [
     { dates: 'Summer 2026', org: 'Gamelab Istanbul', role: 'Game Engineering & Multiplayer Intern', detail: 'Engineered multiplayer infrastructure for a 3D FPS on GlistEngine (C++20): tick-rate replication, Master Server matchmaking, NAT hole punching, PBKDF2-hashed SQLite auth.' },
     { dates: 'Fall 2025 – Present', org: 'Bilkent Game Dev Club (BOA)', role: 'Vice President & Board Member', detail: 'Directing university game dev operations, leading BOA Jam 5 & 6, hosting Dev Talks with Panteon, SciPlay, and Loop Games.' },
+    { dates: '2026 – Present', org: 'GGOG', role: 'Business Development & Event Specialist', detail: 'Studio relations, sponsor outreach, and end-to-end execution for gaming events and speaker programs.' },
     { dates: '2024 – Present', org: 'İhsan Doğramacı Bilkent University', role: 'B.Sc. Computer Technology & Information Systems (CTIS)', detail: 'Coursework: Object-Oriented Programming (C/Java), data structures, algorithms, mobile computing, software engineering.' },
     { dates: 'Jan 2026 – May 2026', org: 'IEEE Bilkent', role: 'Organization Team Member', detail: 'Event logistics, student outreach, and technical workshop coordination.' }
   ],
