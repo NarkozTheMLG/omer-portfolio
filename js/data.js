@@ -50,7 +50,7 @@ export const about = {
           points: [
             'Directing Bilkent\'s 600+ member game dev community: events, sponsorship, partnerships.',
             'Directed BOA Jam 5 & 6, securing sponsorships from TaleWorlds, Bifa, and Game Design Academia while coordinating 7 industry mentors.',
-            'Hosting technical Dev Talks with Panteon, SciPlay and Loop Games.',
+            'Hosting technical Dev Talks with Panteon and SciPlay.',
             'Organizing a club visit to the TaleWorlds office.'
           ]
         },
@@ -88,7 +88,8 @@ export const about = {
           title: 'Organization Team Member',
           dates: 'Jan 2026 – May 2026',
           points: [
-            'Coordinated technical workshops and student engineering outreach.'
+            'Coordinated technical workshops and student engineering outreach.',
+            'Independently organized a visit to Loop Games, including a meeting with the studio\'s CTO.'
           ]
         }
       ],
@@ -97,10 +98,10 @@ export const about = {
   ],
   timeline: [
     { dates: 'Summer 2026', org: 'Gamelab Istanbul', role: 'Game Engineering & Multiplayer Intern', detail: 'Engineered multiplayer infrastructure for a 3D FPS on GlistEngine (C++20): tick-rate replication, Master Server matchmaking, NAT hole punching, PBKDF2-hashed SQLite auth.' },
-    { dates: 'Fall 2025 – Present', org: 'Bilkent Game Dev Club (BOA)', role: 'Vice President & Board Member', detail: 'Directing university game dev operations, leading BOA Jam 5 & 6, hosting Dev Talks with Panteon, SciPlay, and Loop Games.' },
+    { dates: 'Fall 2025 – Present', org: 'Bilkent Game Dev Club (BOA)', role: 'Vice President & Board Member', detail: 'Directing university game dev operations, leading BOA Jam 5 & 6, hosting Dev Talks with Panteon and SciPlay.' },
     { dates: '2026 – Present', org: 'GGOG', role: 'Business Development & Event Specialist', detail: 'Studio relations, sponsor outreach, and end-to-end execution for gaming events and speaker programs.' },
     { dates: '2024 – Present', org: 'İhsan Doğramacı Bilkent University', role: 'B.Sc. Computer Technology & Information Systems (CTIS)', detail: 'Coursework: Object-Oriented Programming (C/Java), data structures, algorithms, mobile computing, software engineering.' },
-    { dates: 'Jan 2026 – May 2026', org: 'IEEE Bilkent', role: 'Organization Team Member', detail: 'Event logistics, student outreach, and technical workshop coordination.' }
+    { dates: 'Jan 2026 – May 2026', org: 'IEEE Bilkent', role: 'Organization Team Member', detail: 'Event logistics, student outreach, and technical workshop coordination. Organized a visit to Loop Games, including a meeting with the studio\'s CTO.' }
   ],
   skills: {
     engines: ['Unity Engine (2D & 3D)', 'Unity Mobile Pipeline', 'ScriptableObject Architecture'],
@@ -135,7 +136,7 @@ export const about = {
     },
     {
       title: 'Bilkent Game Dev Club (BOA)',
-      blurb: 'Leading a 600+ member community: BOA game jams and studio Dev Talks with Panteon, SciPlay and Loop Games.',
+      blurb: 'Leading a 600+ member community: BOA game jams and studio Dev Talks with Panteon and SciPlay.',
       href: '#/club'
     }
   ]
@@ -417,25 +418,6 @@ export const club = {
         'Hosted senior technical artists and software engineers from SciPlay.',
         'Analyzed mobile live-ops infrastructure, game economy balance, and 3D asset optimization pipelines.',
         'Facilitated 1-on-1 student portfolio reviews and networking with industry guests.'
-      ]
-    },
-    {
-      id: 'ev-4',
-      title: 'Loop Games HQ Visit',
-      date: 'Spring 2026',
-      description: 'Coordinated an on-site visit to Loop Games headquarters in Ankara, connecting club members with studio founders, leads, and technical artists.',
-      role: 'Visit Coordinator',
-      platform: 'linkedin',
-      tags: ['Studio Visit', 'Loop Games', 'HQ Tour'],
-      photos: [
-        { src: 'assets/club/loop-games/1778086123965.jpg', alt: 'Loop Games office tour and presentation' },
-        { src: 'assets/club/loop-games/1778086124676.jpg', alt: 'Group photo at Loop Games headquarters' }
-      ],
-      link: 'https://www.linkedin.com/posts/keskin-omer_loopgames-gamedevelopment-gamedev-activity-7457833751645978625-SOmG?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAADqwzFYB1fgCSvHy3UNgUOT5ICSBmgAs80c',
-      details: [
-        'Visited Loop Games HQ in Ankara.',
-        'Discussed architectural scaling for top-grossing mobile titles like Match 3D and Match Factory.',
-        'Connected students with technical leads, gameplay programmers, and art directors.'
       ]
     },
     {
