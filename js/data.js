@@ -153,7 +153,7 @@ export const project = {
     duration: '~12 weeks · Summer 2026',
     unityVersion: 'Unity 6000.3.7f1 (URP 17.3.0, IL2CPP, Cinemachine)',
     platform: 'Android / iOS / WebGL',
-    status: 'Live on CrazyGames (Full Launch)'
+    status: 'Live on CrazyGames (Full Launch) and the App Store'
   },
   systems: [
     'Regions stay off until unlocked: only 150 of 3,252 renderers active at once (~53k live triangles instead of 454k), with only nearby particle systems playing.',
@@ -236,7 +236,7 @@ export const project = {
   // Store availability. Only entries with an href are rendered as links.
   stores: [
     { name: 'CrazyGames', icon: 'assets/project/stores/crazygames.png', href: 'https://www.crazygames.com/game/sprout-king-kmm', status: 'live', statusLabel: 'Live now' },
-    { name: 'App Store', icon: 'assets/project/stores/app-store.png', status: 'review', statusLabel: 'In review' },
+    { name: 'App Store', icon: 'assets/project/stores/app-store.png', href: 'https://apps.apple.com/tr/app/sprout-king/id6814962954', status: 'live', statusLabel: 'Live now' },
     { name: 'Google Play', icon: 'assets/project/stores/google-play.png', status: 'testing', statusLabel: 'Closed testing' }
   ],
   tags: ['Unity 6000 / URP', 'C# Systems Architecture', 'Solo Dev', 'Mobile Performance', 'Monetization & Analytics']
